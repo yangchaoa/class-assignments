@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Dashboard Template for Bootstrap</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../guanli/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="../guanli/node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="../guanli/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../guanli/node_modules/summernote/dist/summernote.js"></script>
+    <link rel="stylesheet" href="../guanli/node_modules/summernote/dist/summernote.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="dashboard.css" rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="../guanli/public/stylesheets/css.css">
+    
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" id="nav">
+          <ul class="nav nav-sidebar" >
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+            <li><a href="#">Nav item</a></li>
+            <li><a href="#">Nav item again</a></li>
+            <!-- <li><a href="#">One more nav</a></li> -->
+          </ul>
+        </div>
+        <div class="z">
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main show">
+            <h1 class="page-header">Dashboard</h1>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="da">✚ &nbsp;新增</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">新闻标题：</label>
+                                      <input type="text" class="form-control" id="title" placeholder="新闻标题">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">作者：</label>
+                                      <input type="text" class="form-control" id="name" placeholder="作者名字...">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">时间：</label>
+                                      <input type="text" class="form-control" id="timer" placeholder="时间">
+                                  </div>
+                                  <div class="form-group">
+                                      <select name="" id="sele">
+                                          <option value="1">行业新闻</option>
+                                          <option value="2">企业新闻</option>
+                                      </select>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">详情：</label>
+                                      <div id="summernote"></div> 
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id='yc'>Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <button type="button" class="qr btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+                  
+                  <div class=" sc modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="jg">警告</h4>
+                            </div>
+                            <div class="modal-body">
+                              您确认要删除吗？（不可撤销的哦~）
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-danger" id='shan'>Confrim</button>
+                            </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>uid</th>
+                    <th>title</th>
+                    <th>timer</th>
+                    <th>name</th>
+                    <th>content</th>
+                  </tr>
+                </thead>
+                <tbody id="cont">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">第二个</h1>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">新闻标题：</label>
+                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">作者：</label>
+                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">时间：</label>
+                                      <input type="text" class="form-control" id="" placeholder="时间">
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+        
+        
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>uid</th>
+                    <th>title</th>
+                    <th>timer</th>
+                    <th>name</th>
+                    <th>content</th>
+                  </tr>
+                </thead>
+                <tbody id="">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">第三个</h1>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">新闻标题：</label>
+                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">作者：</label>
+                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">时间：</label>
+                                      <input type="text" class="form-control" id="" placeholder="时间">
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+        
+        
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>uid</th>
+                    <th>title</th>
+                    <th>timer</th>
+                    <th>name</th>
+                    <th>content</th>
+                  </tr>
+                </thead>
+                <tbody id="">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">第四个</h1>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">新闻标题：</label>
+                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">作者：</label>
+                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">时间：</label>
+                                      <input type="text" class="form-control" id="" placeholder="时间">
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+        
+        
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>uid</th>
+                    <th>title</th>
+                    <th>timer</th>
+                    <th>name</th>
+                    <th>content</th>
+                  </tr>
+                </thead>
+                <tbody id="">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">第五个</h1>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">新闻标题：</label>
+                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">作者：</label>
+                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">时间：</label>
+                                      <input type="text" class="form-control" id="" placeholder="时间">
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+        
+        
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>uid</th>
+                    <th>title</th>
+                    <th>timer</th>
+                    <th>name</th>
+                    <th>content</th>
+                  </tr>
+                </thead>
+                <tbody id="">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">第六个</h1>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">新闻标题：</label>
+                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">作者：</label>
+                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">时间：</label>
+                                      <input type="text" class="form-control" id="" placeholder="时间">
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+        
+        
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>uid</th>
+                    <th>title</th>
+                    <th>timer</th>
+                    <th>name</th>
+                    <th>content</th>
+                  </tr>
+                </thead>
+                <tbody id="">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      $(function(){
+        //选项卡
+        $('.z>div').eq(0).show()
+            $('#nav li').click(function(){
+                var a=$(this).index()
+                console.log(a)
+                $(this).addClass('active').siblings().removeClass('active')
+              //  $('.z>div').slideUp().eq(a).slideDown()
+                // $('.z>div').hide().eq(a).fadeIn()
+                $('.z>div').removeClass('show').eq(a).addClass('show')
+            })
+
+
+
+        var ii='';
+        $('#summernote').summernote();
+        var url='http://localhost:3000/list/';
+        load();
+        //获取
+        function load(){
+          $.ajax({
+            url:url+'get',
+            type:'post',
+            success:function(e){
+              var arr='';
+              for(var i in e){
+                arr+='<tr><td>'+e[i].uid+'</td><td>'+e[i].title+'</td><td>'+e[i].time+'</td><td>'+e[i].name+'</td><td>'+e[i].content+'</td><td class="amend glyphicon glyphicon-edit" data-toggle="modal" data-target="#myModal" data-ii="'+e[i].id+'"></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>';
+              }
+              $('#cont').html(arr);
+              $('.amend').click(function(){
+                ii=$(this).attr('data-ii');
+                console.log(ii);
+                $('h2').attr('id','you')
+                $.ajax({
+                  url:url+'xq',
+                  type:'post',
+                  data:{id:ii},
+                  success:function(e){
+                    $('#title').val(e[0].title);
+                    $('#name').val(e[0].name);
+                    $('#timer').val(e[0].time);
+                    $('#sele').val(e[0].uid);
+                    // $('#sele option:selected').val(e[0].uid);
+                    console.log($('#sele').val(e[0].uid))
+                    // $('#title').attr('value',e[0].title);
+                    // $('#name').attr('value',e[0].name);
+                    // $('#timer').attr('value',e[0].time);
+                    // $('#sele').find('option[value="'+e[0].uid+'"]').attr('selected',true)
+                    $('#summernote').summernote('code',e[0].content)
+                  }
+                })
+              })
+              //删除
+              // $('.del').click(function(){
+              //   var id=$(this).attr('data-id');
+              //   var _del=$(this);
+              //   console.log(_del)
+              //   console.log(id)
+              //   $.ajax({
+              //     url:url+'del',
+              //     type:'post',
+              //     data:{id:id},
+              //     success:function(e){
+
+              //     }
+              //   })
+              //   _del.parent().remove()
+              // })
+
+              $('.del').click(function(){
+                var id=$(this).attr('data-id');
+                var _del=$(this);
+                console.log(_del)
+                console.log(id)
+                $('.qr').trigger('click');
+                $('#shan').click(function(){
+                  $.ajax({
+                    url:url+'del',
+                    type:'post',
+                    data:{id:id},
+                    success:function(e){
+                    }
+                  })
+                  $(this).attr('data-dismiss','modal')
+                  _del.parent().remove()
+                })
+                
+              })
+
+            }
+          })
+        }
+
+        //增加 修改
+        $('#yc').click(function(){
+          if($('h2').attr('id')=='you'){
+            $(this).attr('data-dismiss','modal');
+            data('amend')
+            $("h2").attr("id","")
+          }else{
+            $(this).attr('data-dismiss','modal');
+            data('inst')
+            // $(this).attr('data-dismiss','');
+          }
+        })
+
+
+
+        function data(a){
+          var tit=$('#title').val();
+          var namea=$('#name').val();
+          var timer=$('#timer').val();
+          var sele = $('#sele option:selected').val()
+          var datail=$('#summernote').summernote('code');
+          console.log(tit,namea,timer,sele,datail)
+          if(tit=='' || namea=='' || timer=='' || datail==''){
+            $("#yc").attr('data-dismiss','');
+            alert('有未填写选项，请检查')
+            // return
+          }else{
+            $.ajax({
+              url:url+a,
+              type:'post',
+              data:{tit:tit,namea:namea,timer:timer,sele:sele,datail:datail,ii:ii},
+              success:function(e){
+                console.log(e)
+                load()
+                $('#yc').attr('data-dismiss','');
+                
+              }
+            })
+          }
+        }
+        $('#da').click(function(){
+          $('#title').val('')
+          $('#timer').val('')
+          $('#name').val('')
+          $('#summernote').summernote('code','')
+          $('#yc').attr('data-dismiss','modal');
+        })
+      })
+     
+    </script>
+    <!-- <script>
+    $(function(){
+      zhixing()
+      function zhixing(){
+                      $.ajax({
+                        url:"http://localhost:3000/list/get",
+                        type:"get",
+                        success:function(e){
+                          var arr='';
+                          for(var i in e){
+                          arr+='<tr><td>'+e[i].uid+'</td><td>'+e[i].title+'</td><td>'+e[i].time+'</td><td>'+e[i].name+'</td><td>'+e[i].content+'</td><td class="amend glyphicon glyphicon-edit" data-dismiss="modal" data-target="#myModal" data-ii='+e[i].id+'></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>';
+                          }
+                        $('#cont').html(arr);
+                        $('.del').click(function(){
+                          var id=$(this).attr('data-id')
+                          console.log(id)
+                          var _this=$(this);
+                          console.log(_this)
+                          $.ajax({
+                          url:'http://localhost:3000/list/del',
+                          type:'post',
+                          data:{id:id},
+                          success:function(e){
+
+                          }
+                        })
+                        _this.parent().remove();
+                      })
+                    }
+                  })
+                }
+                $('#summernote').summernote();
+    })
+    </script> -->
+    <!-- <script>
+            $(function(){
+              zhixing()
+              var ai='';
+                $('#yc').click(function(){
+                  if( $("h2").attr("id")=="zouni"){
+                    alert(ai)
+                    alert("xiugai")
+
+                    $("h2").attr("id","")
+                  }else{
+                    alert("tianjia")
+                    var tit=$('#title').val();
+                    var namea=$('#name').val();
+                    var timer=$('#timer').val();
+                    var sele = $('#sele option:selected').val()
+                    var zhi=$('#summernote').summernote('code');
+                    console.log(tit,namea,timer,sele)
+                    console.log(zhi)
+                    $.ajax({
+                      url:'http://localhost:3000/list/inst',
+                      type:'post',
+                      data:{tit:tit,namea:namea,timer:timer,sele:sele,datail:zhi},
+                      success:function(e){
+                        zhixing()
+                      }
+                    })
+                    $(this).attr('data-dismiss',"modal")
+                  }
+                })
+                function zhixing(){
+                      $.ajax({
+                        url:"http://localhost:3000/list/get",
+                        type:"get",
+                        success:function(e){
+                          var arr='';
+                          for(var i in e){
+                          arr+='<tr><td>'+e[i].uid+'</td><td>'+e[i].title+'</td><td>'+e[i].time+'</td><td>'+e[i].name+'</td><td>'+e[i].content+'</td><td class="amend glyphicon glyphicon-edit" data-dismiss="modal" data-target="#myModal" data-ii='+e[i].id+'></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>';
+                          }
+                      $('#cont').html(arr);
+                      $('.del').click(function(){
+                        var id=$(this).attr('data-id')
+                        console.log(id)
+                        var _this=$(this);
+                        console.log(_this)
+                        $.ajax({
+                          url:'http://localhost:3000/list/del',
+                          type:'post',
+                          data:{id:id},
+                          success:function(e){
+
+                          }
+                        })
+                        _this.parent().remove();
+                      })
+                    }
+                  })
+                }
+                $('#summernote').summernote();
+            })
+        </script> -->
+  </body>
+</html>
