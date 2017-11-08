@@ -106,7 +106,13 @@ body {
   .qr{
     display: none;
   }
-
+  .turen{
+    display: none;
+  }
+  .right{
+    float: right;
+    background: red
+  }
   /* .sc{
     padding: 10px;
     border-color: red

@@ -75,7 +75,7 @@
         </div>
         <div class="z">
           <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main show">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">新闻列表</h1>
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="da">✚ &nbsp;新增</button>
                   
@@ -165,57 +165,64 @@
 
 
           <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">第二个</h1>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                          </div>
-                          <div class="modal-body">
-                              <form>
-                                  <div class="form-group">
-                                      <label for="exampleInputEmail1">新闻标题：</label>
-                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="exampleInputPassword1">作者：</label>
-                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="exampleInputEmail1">时间：</label>
-                                      <input type="text" class="form-control" id="" placeholder="时间">
-                                  </div>
-                              </form>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
-                          </div>
-                        </div>
+            <h1 class="page-header">轮播图片</h1>
+              <!-- Small modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">获取</button>
+              
+              <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      </div>
+                      <div class="modal-body">
+                          <input type="file" name="file" id="file">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="zhuce btn btn-primary">提交</button>
                       </div>
                   </div>
-                  
-        
-        
+                </div>
+              </div>
+              <button type="button" class="turen btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg5">Large modal</button>
+              
+              <div class=" sc modal fade bs-example-modal-lg5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="jg">警告</h4>
+                        </div>
+                        <div class="modal-body">
+                          您确认要删除吗？（不可撤销的哦~）
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-danger" id='shi'>Confrim</button>
+                        </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             <h2 class="sub-header">Section title</h2>
+                          <div class="box"></div>
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>uid</th>
-                    <th>title</th>
-                    <th>timer</th>
-                    <th>name</th>
-                    <th>content</th>
+                    <th>id</th>
+                    <th>method</th>
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
                   </tr>
                 </thead>
-                <tbody id="">
+                <tbody id="img">
                   
                 </tbody>
               </table>
@@ -510,22 +517,6 @@
                   }
                 })
               })
-              //删除
-              // $('.del').click(function(){
-              //   var id=$(this).attr('data-id');
-              //   var _del=$(this);
-              //   console.log(_del)
-              //   console.log(id)
-              //   $.ajax({
-              //     url:url+'del',
-              //     type:'post',
-              //     data:{id:id},
-              //     success:function(e){
-
-              //     }
-              //   })
-              //   _del.parent().remove()
-              // })
 
               $('.del').click(function(){
                 var id=$(this).attr('data-id');
@@ -544,13 +535,10 @@
                   $(this).attr('data-dismiss','modal')
                   _del.parent().remove()
                 })
-                
               })
-
             }
           })
         }
-
         //增加 修改
         $('#yc').click(function(){
           if($('h2').attr('id')=='you'){
@@ -598,103 +586,83 @@
           $('#summernote').summernote('code','')
           $('#yc').attr('data-dismiss','modal');
         })
+
+//w图片上传
+
+        var method='http://localhost:3000/lunbo/';
+        lunbo()
+        function lunbo(){
+          $.ajax({
+            url:method,
+            type:'post',
+            contentType:false,
+            processData:false,
+            success:function(e){
+              var tu='';
+              for(var i in e){
+                tu+='<tr><td>'+e[i].id+'</td><td>'+e[i].img+'</td><td class="tu glyphicon glyphicon-edit" data-toggle="modal" data-target=".bs-example-modal-lg1" data-ia="'+e[i].id+'"></td><td class="glyphicon glyphicon-trash tudel" data-iq='+e[i].id+'></td></tr>'
+              }
+              $('#img').html(tu)
+              $('.tudel').click(function(){
+                var _tu=$(this);
+                var _tuid=$(this).attr('data-iq');
+                console.log(_tu,_tuid)
+                $('.turen').trigger('click');
+                $('#shi').click(function(){
+                  $.ajax({
+                    url:method+'del',
+                    type:'post',
+                    data:{_tuid:_tuid},
+                    success:function(e){
+                    }
+                  })
+                  _tu.parent().remove()
+                    $('#shi').attr('data-dismiss','modal')
+                })
+              })
+            }
+          })
+        }
+        var file;
+        function getFiles (el) {
+           file=el.files //获取文件属性
+           console.log(file)
+        }
+
+        $('.zhuce').click(function(){
+           var fd = new FormData();
+           var _zhu=$(this)
+          console.log($(this))
+       		for(var i = 0;i<file.length;i++){
+        		fd.append('files',file[i])
+        		//通过append方法把file属性转化为键值对形式
+          }
+          console.log(fd)
+              _zhu.attr('data-dismiss','modal')
+       		$.ajax({
+       			url:method+'img',
+       			type:'POST',
+       			data:fd,
+       			contentType:false,
+       				processData:false,
+       				success:function(e){
+              console.log(e)
+              var a='';
+              for(i in e){
+                a+='<tr><td>'+e[i].id+'</td><td>'+e[i].img+'</td><td class="amend glyphicon glyphicon-edit" data-toggle="modal" data-target=".bs-example-modal-sm" data-ii="'+e[i].id+'"></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>'
+              }
+              lunbo()
+              $('#img').html(a)
+       			}
+       		}) 
+
+        })
+        $('#file').change(function(){
+          getFiles(this)
+        })
       })
      
     </script>
-    <!-- <script>
-    $(function(){
-      zhixing()
-      function zhixing(){
-                      $.ajax({
-                        url:"http://localhost:3000/list/get",
-                        type:"get",
-                        success:function(e){
-                          var arr='';
-                          for(var i in e){
-                          arr+='<tr><td>'+e[i].uid+'</td><td>'+e[i].title+'</td><td>'+e[i].time+'</td><td>'+e[i].name+'</td><td>'+e[i].content+'</td><td class="amend glyphicon glyphicon-edit" data-dismiss="modal" data-target="#myModal" data-ii='+e[i].id+'></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>';
-                          }
-                        $('#cont').html(arr);
-                        $('.del').click(function(){
-                          var id=$(this).attr('data-id')
-                          console.log(id)
-                          var _this=$(this);
-                          console.log(_this)
-                          $.ajax({
-                          url:'http://localhost:3000/list/del',
-                          type:'post',
-                          data:{id:id},
-                          success:function(e){
 
-                          }
-                        })
-                        _this.parent().remove();
-                      })
-                    }
-                  })
-                }
-                $('#summernote').summernote();
-    })
-    </script> -->
-    <!-- <script>
-            $(function(){
-              zhixing()
-              var ai='';
-                $('#yc').click(function(){
-                  if( $("h2").attr("id")=="zouni"){
-                    alert(ai)
-                    alert("xiugai")
-
-                    $("h2").attr("id","")
-                  }else{
-                    alert("tianjia")
-                    var tit=$('#title').val();
-                    var namea=$('#name').val();
-                    var timer=$('#timer').val();
-                    var sele = $('#sele option:selected').val()
-                    var zhi=$('#summernote').summernote('code');
-                    console.log(tit,namea,timer,sele)
-                    console.log(zhi)
-                    $.ajax({
-                      url:'http://localhost:3000/list/inst',
-                      type:'post',
-                      data:{tit:tit,namea:namea,timer:timer,sele:sele,datail:zhi},
-                      success:function(e){
-                        zhixing()
-                      }
-                    })
-                    $(this).attr('data-dismiss',"modal")
-                  }
-                })
-                function zhixing(){
-                      $.ajax({
-                        url:"http://localhost:3000/list/get",
-                        type:"get",
-                        success:function(e){
-                          var arr='';
-                          for(var i in e){
-                          arr+='<tr><td>'+e[i].uid+'</td><td>'+e[i].title+'</td><td>'+e[i].time+'</td><td>'+e[i].name+'</td><td>'+e[i].content+'</td><td class="amend glyphicon glyphicon-edit" data-dismiss="modal" data-target="#myModal" data-ii='+e[i].id+'></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>';
-                          }
-                      $('#cont').html(arr);
-                      $('.del').click(function(){
-                        var id=$(this).attr('data-id')
-                        console.log(id)
-                        var _this=$(this);
-                        console.log(_this)
-                        $.ajax({
-                          url:'http://localhost:3000/list/del',
-                          type:'post',
-                          data:{id:id},
-                          success:function(e){
-
-                          }
-                        })
-                        _this.parent().remove();
-                      })
-                    }
-                  })
-                }
-                $('#summernote').summernote();
-            })
-        </script> -->
   </body>
 </html>
