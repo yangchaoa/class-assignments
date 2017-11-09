@@ -113,6 +113,9 @@ body {
     float: right;
     background: red
   }
+  .m_s{
+    display: none;
+  }
   /* .sc{
     padding: 10px;
     border-color: red

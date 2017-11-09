@@ -32,6 +32,13 @@ router.post("/del",function (req, res, next) {
 	})
   });
 
+router.post('/in',function(req,res){
+	res.header("Access-Control-Allow-Origin","*");
+	pool.query(`SELECT * FROM lunbo WHERE id=${req.body.ia}`,function(err,rows){
+		res.send(rows)
+		console.log(req.body.ia)
+	})
+})
   
 router.post('/img',function(req,res){
 	res.header('Access-Control-Allow-Origin','*');
@@ -73,11 +80,45 @@ router.post('/img',function(req,res){
 
 
 
+router.post('/xiugai',function(req,res){
+	res.header('Access-Control-Allow-Origin','*');
+	var form = new formidable.IncomingForm();
+	form.uploadDir = 'public/images'  //图片的存放路径
+	form.parse(req,function(err,fields,files){
+		//parse 是用来解析文件或图片信息的
+		console.log(fields,files);
+		for(i in files){
+			var file = files[i];
+			var fName = (new Date()).getTime();
+			switch(file.type){
+				case 'image/jpeg':
+				fName = fName+'.jpg';
+				break;
+				case 'image/png':
+				fName = fName + '.png';
+				break;
+				case 'image/gif':
+				fName = fName + '.gif';
+				break;
+			}
+			var newPath = 'public/images/' + fName
+			//用来定义图片新的路径
+			fs.renameSync(file.path,newPath);
+			//接受两个参数 第一个是旧的路径 第二个是新的
+			//res.send(newPath);
+		}
+		res.send(fName);
+	})
+})
 
 
 
-
-
+router.post('/xieru',function(req,res){
+	res.header('Access-Control-Allow-Origin','*');
+	pool.query(`UPDATE lunbo SET img="http://localhost:3000/images/${req.body.src}" WHERE id =${req.body.id}`,function(err,rows){
+		res.send(rows);
+	})
+})
 
 
 module.exports = router;

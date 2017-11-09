@@ -164,10 +164,10 @@
           </div>
 
 
-          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="tab2">
             <h1 class="page-header">轮播图片</h1>
               <!-- Small modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">获取</button>
+              <button id="btn22" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">获取</button>
               
               <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                 <div class="modal-dialog modal-sm" role="document">
@@ -229,13 +229,13 @@
             </div>
           </div>
 
-          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">第三个</h1>
+          <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="m_main">
+            <h1 class="page-header">模板功能</h1>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModall" id="m_new">✚ &nbsp;新增</button>
                   
                   <!-- Modal -->
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal fade" id="myModall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -245,25 +245,44 @@
                           <div class="modal-body">
                               <form>
                                   <div class="form-group">
-                                      <label for="exampleInputEmail1">新闻标题：</label>
-                                      <input type="text" class="form-control" id="" placeholder="新闻标题">
+                                      <label for="exampleInputEmail1">标题：</label>
+                                      <input type="text" class="form-control" id="m_title" placeholder="标题">
                                   </div>
                                   <div class="form-group">
-                                      <label for="exampleInputPassword1">作者：</label>
-                                      <input type="text" class="form-control" id="" placeholder="作者名字...">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="exampleInputEmail1">时间：</label>
-                                      <input type="text" class="form-control" id="" placeholder="时间">
+                                      <label for="exampleInputPassword1">详情：</label>
+                                      <input type="text" class="form-control" id="m_content" placeholder="内容详情...">
                                   </div>
                               </form>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id=''>Save changes</button>
+                            <button type="button" class="btn btn-primary" id='m_qr'>Save changes</button>
                           </div>
                         </div>
                       </div>
+                  </div>
+
+                  <button type="button" class="m_s btn btn-primary" data-toggle="modal" data-target=".m_bs-example-modal-lg">Large modal</button>
+                  
+                  <div class=" sc modal fade m_bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="">警告</h4>
+                            </div>
+                            <div class="modal-body">
+                              您确认要删除吗？（不可撤销的哦~）
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-danger" id='m_shan'>Confrim</button>
+                            </div>
+                          
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
         
@@ -273,14 +292,13 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>uid</th>
+                    <th>id</th>
+                    <th>icon</th>
                     <th>title</th>
-                    <th>timer</th>
-                    <th>name</th>
                     <th>content</th>
                   </tr>
                 </thead>
-                <tbody id="">
+                <tbody id="m_cont">
                   
                 </tbody>
               </table>
@@ -466,7 +484,7 @@
     </div>
     <script>
       $(function(){
-        //选项卡
+//选项卡
         $('.z>div').eq(0).show()
             $('#nav li').click(function(){
                 var a=$(this).index()
@@ -478,7 +496,7 @@
             })
 
 
-
+//新闻
         var ii='';
         $('#summernote').summernote();
         var url='http://localhost:3000/list/';
@@ -553,7 +571,7 @@
         })
 
 
-
+        //封装
         function data(a){
           var tit=$('#title').val();
           var namea=$('#name').val();
@@ -579,6 +597,7 @@
             })
           }
         }
+        //点击增加按钮时 将value值设置为空
         $('#da').click(function(){
           $('#title').val('')
           $('#timer').val('')
@@ -587,9 +606,11 @@
           $('#yc').attr('data-dismiss','modal');
         })
 
+
 //w图片上传
 
         var method='http://localhost:3000/lunbo/';
+        var ia='';
         lunbo()
         function lunbo(){
           $.ajax({
@@ -620,6 +641,14 @@
                     $('#shi').attr('data-dismiss','modal')
                 })
               })
+              
+              $('.tu').click(function(){
+                ia=$(this).attr('data-ia');
+                console.log(ia);
+                $('#tab2 h2').attr('id','tu')
+                $("#btn22").trigger("click")
+              })
+
             }
           })
         }
@@ -630,7 +659,7 @@
         }
 
         $('.zhuce').click(function(){
-           var fd = new FormData();
+          var fd = new FormData();
            var _zhu=$(this)
           console.log($(this))
        		for(var i = 0;i<file.length;i++){
@@ -639,27 +668,172 @@
           }
           console.log(fd)
               _zhu.attr('data-dismiss','modal')
-       		$.ajax({
-       			url:method+'img',
+           if($('#tab2 h2').attr('id')){
+            $.ajax({
+       			url:method+'xiugai',
        			type:'POST',
        			data:fd,
        			contentType:false,
        				processData:false,
        				success:function(e){
-              console.log(e)
-              var a='';
-              for(i in e){
-                a+='<tr><td>'+e[i].id+'</td><td>'+e[i].img+'</td><td class="amend glyphicon glyphicon-edit" data-toggle="modal" data-target=".bs-example-modal-sm" data-ii="'+e[i].id+'"></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>'
-              }
-              lunbo()
-              $('#img').html(a)
+              console.log(e);
+              $.ajax({
+                url:"http://localhost:3000/lunbo/xieru",
+                type:"post",
+                data:{src:e,id:ia},
+                success:function(e){
+                  // alert(e)
+                  console.log(e)
+                  lunbo()
+                }
+              })
        			}
-       		}) 
+       		})
+           }else{
+          //   var fd = new FormData();
+          //  var _zhu=$(this)
+          // console.log($(this))
+       		// for(var i = 0;i<file.length;i++){
+        	// 	fd.append('files',file[i])
+        	// 	//通过append方法把file属性转化为键值对形式
+          // }
+          // console.log(fd)
+          //     _zhu.attr('data-dismiss','modal')
+            $.ajax({
+              url:method+'img',
+              type:'POST',
+              data:fd,
+              contentType:false,
+                processData:false,
+                success:function(e){
+                console.log(e)
+                var a='';
+                for(i in e){
+                  a+='<tr><td>'+e[i].id+'</td><td>'+e[i].img+'</td><td class="tu glyphicon glyphicon-edit" data-toggle="modal" data-target=".bs-example-modal-sm" data-ii="'+e[i].id+'"></td><td class="glyphicon glyphicon-trash del" data-id='+e[i].id+'></td></tr>'
+                }
+                lunbo()
+                $('#img').html(a)
+              }
+            }) 
+           }
 
         })
+
+        // function tu(a){
+        //   $.ajax({
+        //     url:url+a,
+        //     type:'post',
+        //     data:{ia:ia},
+        //     success:function(e){
+        //       console.log(e)
+        //       lunbo()
+        //       $('#yc').attr('data-dismiss','');
+        //     }
+        //   })
+        // }
+        
+
         $('#file').change(function(){
           getFiles(this)
         })
+
+//模板功能
+
+        var mm='';
+        var m_url='http://localhost:3000/mould/';
+        mould();
+        //获取
+        function mould(){
+          $.ajax({
+            url:m_url+'get',
+            type:'post',
+            success:function(e){
+              var m='';
+              for(var i in e){
+                m+='<tr><td>'+e[i].id+'</td><td>'+e[i].icon+'</td><td>'+e[i].title+'</td><td>'+e[i].content+'</td><td class="m_xiu glyphicon glyphicon-edit" data-toggle="modal" data-target="#myModall" data-ii="'+e[i].id+'"></td><td class="glyphicon glyphicon-trash m_del" data-id='+e[i].id+'></td></tr>';
+              }
+              $('#m_cont').html(m);
+              $('.m_xiu').click(function(){
+                mm=$(this).attr('data-ii');
+                console.log(mm);
+                $('#m_main h2').attr('id','you')
+                $.ajax({
+                  url:m_url+'xq',
+                  type:'post',
+                  data:{id:mm},
+                  success:function(e){
+                    $('#m_title').val(e[0].title);
+                    $('#m_content').val(e[0].content);
+                  }
+                })
+              })
+
+              $('.m_del').click(function(){
+                var id=$(this).attr('data-id');
+                var _del=$(this);
+                console.log(_del)
+                console.log(id)
+                $('.m_s').trigger('click');
+                $('#m_shan').click(function(){
+                  $.ajax({
+                    url:m_url+'del',
+                    type:'post',
+                    data:{id:id},
+                    success:function(e){
+                    }
+                  })
+                  $(this).attr('data-dismiss','modal')
+                  _del.parent().remove()
+                })
+              })
+            }
+          })
+        }
+        //增加 修改
+        $('#m_qr').click(function(){
+          if($('#m_main h2').attr('id')=='you'){
+            $(this).attr('data-dismiss','modal');
+            m_data('amend')
+            $("#m_main h2").attr("id","")
+          }else{
+            $(this).attr('data-dismiss','modal');
+            m_data('inst')
+          }
+        })
+
+
+        //封装
+        function m_data(a){
+          var m_tit=$('#m_title').val();
+          var m_cont=$('#m_content').val();
+          console.log(m_tit,m_cont)
+          if(m_tit=='' || m_cont==''){
+            $("#m_qr").attr('data-dismiss','');
+            alert('有未填写选项，请检查')
+            // return
+          }else{
+            $.ajax({
+              url:m_url+a,
+              type:'post',
+              data:{tit:m_tit,datail:m_cont,id:mm},
+              success:function(e){
+                console.log(e)
+                mould()
+                $('#m_qr').attr('data-dismiss','');
+                
+              }
+            })
+          }
+        }
+        //点击增加按钮时 将value值设置为空
+        $('#m_new').click(function(){
+          $('#m_title').val('')
+          $('#m_content').val('')
+          $('#m_qr').attr('data-dismiss','modal');
+        })
+
+
+
       })
      
     </script>

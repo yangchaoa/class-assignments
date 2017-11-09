@@ -1,218 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="../guanli/jquery-3.1.1.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="../guanli/public/stylesheets/index.css">
-</head>
-<body>
-    <div class="header">
-        <header>
-            <div class="h_left"><img src="http://static.qifeiye.com/caches/4a7b7daf436f3e5cb2e29433375ccd5d/aHR0cDovLzU1OWE0NDdjNzMyZWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNy8wNS9jMThkMmUyZWIxYTE5Nzg3M2NhNzM4YWI1ZmYwZGM3MS5wbmc_p_p100_p_3D.png" alt=""></div>
-            <nav>
-                <ul class="h_right">
-                    <li class="h_r_color">首页</li>
-                    <li>产品</li>
-                    <li>功能</li>
-                    <li>关于</li>
-                    <li>项目</li>
-                    <li>价格</li>
-                    <li>服务</li>
-                    <li>联系</li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-    
-</body>
-</html>
+	<meta charset="utf-8">
+	<title>有家网</title>
 
+	<script src="../guanli/node_modules/jquery/dist/jquery.js"></script>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        body{
-            margin: 0;padding: 0;list-style: none;
-        }
-        .box{
-            width:100%;
-            height:100%;
-            position:fixed;
-            left:100px;  top: 0;
-        }
-        .box ul li{
-            width:32px;
-            height:32px;
-            color:#8F8583;
-            text-align:center;
-            line-height: 32px;
-            float: left;
-            list-style: none;
-            background-color: rosybrown;
-            margin-left: 30px;
-        }
+	<link rel="stylesheet" type="text/css" href="../guanli/node_modules/bootstrap/dist/css/bootstrap.css">
 
-        .box1{
-            width:100%;
-        }
-        .lb{
-            height: 768px;
-        }
-        .hb1{
-            background-color:yellow;
-        }
-        .hb2{
-            background-color:dimgrey;
-        }
-        .hb3{
-            background-color:aqua;
-        }
-        .hb4{
-            background-color:red;
-        }
-        .hb5{
-            background-color:navy;
-        }
-        .hb6{
-            background-color:aqua;
-        }
-        .hb7{
-            background-color:indianred;
-        }
-        .select{
-            background-color: rosybrown;
-        }
-    </style>
+	<link rel="stylesheet"  href="../guanli/node_modules/bootstrap/dist/css/bootstrap-theme.css">
+
+	<script src="../guanli/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<link href="../guanli/node_modules/summernote/dist/summernote.css" rel="stylesheet">
+
+	<script src="../guanli/node_modules/summernote/dist/summernote.js"></script>
+	<link rel="stylesheet" type="text/css" href="../guanli/public/stylesheets/index.css">
+
 </head>
 <body>
 
-    <div class="box">
-        <ul>
-            <li class="select">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-        </ul>
+<div class="wrap">
+	
+    <div class="scroll">
+		<div class="scroll1">
+			<div class="logo1"><img src="../guanli/public/images/logo.png"></div>
+			<ul>
+	            <li class="select">首页</li>
+	            <li>产品</li>
+	            <li>功能</li>
+	            <li>关于</li>
+	            <li>团队</li>
+	            <li>价格</li>
+	            <li>项目</li>
+	            <li>服务</li>
+	            <li>新闻</li>
+        	</ul>
+		</div>
     </div>
     <div class="box1">
 
-        <div class="lb hb1" id="lb1">11111</div>
-        <div class="lb hb2" id="lb2">22222</div>
-        <div class="lb hb3" id="lb3">33333</div>
-        <div class="lb hb4" id="lb4">44444</div>
-        <div class="lb hb5" id="lb5">55555</div>
-        <div class="lb hb6" id="lb6">666666</div>
-        <div class="lb hb7" id="lb7">777777</div>
+        <div class="lb hb1" id="lb1">
+        	<div class="nav">
+		<div class="nav1">
+			<div class="logo"><img src="../guanli/public/images/logo.png"></div>
+			<ul>
+	            <li class="select">首页</li>
+	            <li>产品</li>
+	            <li>功能</li>
+	            <li>关于</li>
+	            <li>团队</li>
+	            <li>价格</li>
+	            <li>项目</li>
+	            <li>服务</li>
+	            <li>新闻</li>
+        	</ul>
+		</div>
+    </div>
+        	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <!-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li> -->
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <!-- <div class="item active tp">
+			      <div class="carousel-caption">
+			      	<p>我在灯火阑珊处</p>
+			      	<p>起飞页是放飞梦想的地方，也是寻梦的地方</p>
+			      </div>
+			    </div>
+			    <div class="item tc">
+			      <div class="carousel-caption">
+				      	<p>做一个精彩的站点</p>
+				      	<p>为情怀而干杯，告别朴素的重复和一望无际的平庸</p>
+						</div>
+						<img src="../guanli/public/images/1.png" alt="">
+			    </div> -->
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+        </div>
+
+
+        <div class="lb hb2" id="lb2">
+        	<div class="hb2_1">
+        		<p>产品介绍</p>
+        		<div class="hb2_1_1">
+        			<div></div>
+        			<span class="glyphicon glyphicon-tags"></span>
+        			<div></div>
+        		</div>
+        		<p>亲，本版本是最简单的单页式模板，不需要创建内页
+一般来说，只要半天就可以完成对这个模板的设定哦
+如果您在使用中有什么问题，可以在教程中找到对应的帮助信息哦</p>
+				<div class="hb2_1_2"><img src="../guanli/public/images/19.jpg"></div>
+        	</div>
+        </div>
+        <div class="lb hb3" id="lb3">
+        	<div class="hb3_1">
+        		<p>模板功能</p>
+        		<div class="hb3_1_1">
+        			<div></div>
+        			<span class="glyphicon glyphicon-heart"></span>
+        			<div></div>
+        		</div>
+        		<p>这些文字都是可以根据您的需要自行更改的，所以不要怕和您的需要不一样哦.
+图片的话都没有具体的大小要求，合适就好，开心就好</p>
+				<div class="hb3_1_2">
+					
+				</div>
+        	</div>
+        </div>
+        <div class="lb hb4" id="lb4" background-size="true">
+        	<div class="hb4_1">
+        		<div class="hb4_1_1">
+        			<p>关于我们</p>
+        			<div class="hb4_1_1_1">
+        				<div></div>
+        				<span class="glyphicon glyphicon-glass"></span>
+        				<div></div>
+        			</div>
+        			<p>起飞页不仅是一个方便快捷的构建网站的自助建站平台，更重要的是，我们为中国用户提供了更多贴心的服务：网站备案、自动备份、快速恢复以及网站代建服务。我们使用了国内和香港最好的网络和云服务器，确保您的网站能够快速完美的呈现在访客面前。</p>
+        			<p>起飞页自主建站平台</p>
+        		</div>
+        	</div>
+        </div>
+        <div class="lb hb5" id="lb5">
+        	<div class="hb5_1">
+        		<p>我们的团队</p>
+        		<div class="hb5_1_1">
+        			<div></div>
+        			<span class="glyphicon glyphicon-user"></span>
+        			<div></div>
+        		</div>
+        		<p>介绍一下您的强大的团队吧。几行热情的自我介绍可以迅速的拉近您和访客的距离。</p>			
+        	</div>
+        </div>
+        <div class="lb hb6" id="lb6" background-size="true">
+        	<div class="hb6_1">
+        		<div class="hb6_1_1">
+        			<p>产品销售</p>
+        			<div class="hb6_1_1_1">
+        				<div></div>
+        				<span class="glyphicon glyphicon-send"></span>
+        				<div></div>
+        			</div>   
+        			<p>很少人会做第一个吃螃蟹的人，我们不妨避开让人尴尬的数据而展示一些客户愿意看的漂亮数据</p>
+        			<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 58%">
+					    发布版本58%
+					  </div>
+					</div>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 83%;">
+					    部署客户83%
+					  </div>
+					</div>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 12%;">
+					    荣获奖项12%
+					  </div>
+					</div>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 9%;">
+					    用户好评9%
+					  </div>
+					</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="lb hb7" id="lb7">
+        	<div class="hb7_1">
+        		<p>项目展示</p>
+        		<div class="hb7_1_1">
+        			<div></div>
+        			<span class="glyphicon glyphicon-certificate"></span>
+        			<div></div>
+        		</div>
+        		<p>一个没打过仗的军队很难有说服力，当然打了很多败仗的故事也不会增加任何说服力。所以说说您成功的项目经验吧，如果没有，也可以有哦。</p>			
+        	</div>
+        </div>
+        <div class="lb hb8" id="lb8">
+        	<div class="hb8_1">
+        		<p>我们的服务</p>
+        		<div class="hb8_1_1">
+        			<div></div>
+        			<span class="glyphicon glyphicon-briefcase"></span>
+        			<div></div>
+        		</div>
+        		<p>起飞页不仅是一个方便快捷的构建网站的自助建站平台，更重要的是，我们为中国用户提供了更多贴心的服务：网站备案、自动备份、快速恢复以及网站代建服务。我们使用了国内和香港最好的网络和云服务器，确保您的网站能够快速完美的呈现在访客面前。</p>			
+        	</div>
+        </div>
+        <div class="lb hb9" id="lb9">
+        	<div class="hb9_1">
+        		<p>我们的新闻</p>
+        		<div class="hb9_1_1">
+        			<div></div>
+        			<span class="glyphicon glyphicon-list-alt"></span>
+        			<div></div>
+        		</div>
+        		<p>关注新闻</p>	
+        		<div class="hb9_1_2">
+        			<div class="dh">
+        				<button value="1" class="bs">行业新闻</button>
+	        			<button value="2">企业新闻</button>
+        			</div>
+        			<div class="xs">
+        				
+        			</div>
+        		</div>		
+        	</div>
+        	
+        </div>
+        <div class="footer">
+       		 © Copyright 2017 Revelance. All rights reserved.	
+        </div>
     </div>
 
-<script src="../guanli/jquery-3.1.1.js" type="text/javascript"></script>
-<script>
-    $(function(){
-                var index=0;
+</div>
 
-        $(".box ul li").click(function(){
-                        index=$(this).index()+1;
-                        console.log(index)
-
+</body>
+<script type="text/javascript">
+	$(function(){
+		// jQuery 分页
+        $(".nav ul li").click(function(){
+            var index=0;
+        	index=$(this).index()+1;
             var aa=$("#lb"+index).offset().top;
             $(this).addClass("select").siblings().removeClass("select");
-            $("body,html").animate({scrollTop:aa},500);
-
+            $("body,html").animate({scrollTop:aa},800);
         });
+        $(".scroll ul li").click(function(){
+            var index=0;
+        	index=$(this).index()+1;	
+            var aa=$("#lb"+index).offset().top;
+            $(this).addClass("select").siblings().removeClass("select");
+            $("body,html").animate({scrollTop:aa},800);
+        });
+
+      	$(document).scroll(function(){
+      		if($(window).scrollTop()>100){
+      			$('.scroll').slideDown(700)
+      		}else{
+      			$('.scroll').slideUp(0)
+      		}
+      		
+      	})
+
+
+
+      	// 新闻
+      	// $('.hb9_1_2>.dh>button').click(function(){
+      	// 	var btn=$(this).val();
+      	// 	$(this).addClass('bs').siblings().removeClass('bs');
+      	// 	$.ajax({
+      	// 		url:'http://localhost:3000/list/get',
+      	// 		type:'post',
+      	// 		dataType:'json',
+      	// 		success:function(e){
+      	// 			var str="";
+				// 	for(var i in e){
+				// 		if(btn==e[i].uid){
+				// 			str+='<div><p>'+e[i].title+'</p><p>'+e[i].time+'</p><p>'+e[i].name+'</p><span>'+e[i].content+'</span></div>'
+				// 		}
+				// 	}
+				// 	$('.xs').html(str)
+      	// 		}
+      	// 	})
+      	// })
+        //     var btn=$(this).val();
+        //     $(this).addClass('bs').siblings().removeClass('bs');
+        //     $.ajax({
+        //         url:'http://localhost:3000/list/get',
+        //         type:'post',
+        //         dataType:'json',
+        //         success:function(e){
+        //             var str="";
+        //             for(var i in e){
+        //                 if(btn==e[i].uid){
+        //                     str+='<div><p>'+e[i].name+'</p><p>'+e[i].title+'</p><span>'+e[i].time+'</span></div>'
+        //                 }
+        //             }
+        //             $('.xs').html(str)
+        //         }
+        //     })
+
+
+            // 轮播图
+            $.ajax({
+                url:'http://localhost:3000/lunbo/',
+                type:'post',
+                dataType:'json',
+                success:function(e){
+												console.log(e)  
+												for(var i in e){
+													$('.carousel-indicators').append('	<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>')
+												$('.carousel-inner').append(`<div class="item tc"><div class="carousel-caption"><p>做一个精彩的站点</p><p>为情怀而干杯，告别朴素的重复和一望无际的平庸</p></div>	<img src="${e[i].img}" alt=""></div>`)
+												}
+												$('.carousel-indicators li').eq(0).addClass('active');  
+												$('.carousel-inner>div').eq(0).addClass('active');                
+                }
+            })
+
+      	
+
+
     });
+
 </script>
-</body>
-</html> -->
-
-
-
-
-
-
-
-<!-- <div class="hide col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1 class="page-header">Dashboard</h1>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="">✚ &nbsp;新增</button>
-          
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                  </div>
-                  <div class="modal-body">
-                      <form>
-                          <div class="form-group">
-                              <label for="exampleInputEmail1">新闻标题：</label>
-                              <input type="text" class="form-control" id="" placeholder="新闻标题">
-                          </div>
-                          <div class="form-group">
-                              <label for="exampleInputPassword1">作者：</label>
-                              <input type="text" class="form-control" id="" placeholder="作者名字...">
-                          </div>
-                          <div class="form-group">
-                              <label for="exampleInputEmail1">时间：</label>
-                              <input type="text" class="form-control" id="" placeholder="时间">
-                          </div>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id=''>Save changes</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <button type="button" class="qr btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-          
-          <div class=" modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="">警告</h4>
-                    </div>
-                    <div class="modal-body">
-                      您确认要删除吗？（不可撤销的哦~）
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-danger" id=''>Confrim</button>
-                    </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-    <h2 class="sub-header">Section title</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>uid</th>
-            <th>title</th>
-            <th>timer</th>
-            <th>name</th>
-            <th>content</th>
-          </tr>
-        </thead>
-        <tbody id="">
-          
-        </tbody>
-      </table>
-    </div>
-  </div> -->
+</html>
